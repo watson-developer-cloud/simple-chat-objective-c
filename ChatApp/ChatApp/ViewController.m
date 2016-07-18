@@ -15,10 +15,12 @@
  **/
 
 #import "ViewController.h"
+#import "ChatApp-swift.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) DemoModelData *demoData;
+@property (strong, nonatomic) TextToSpeechBridge *textToSpeech;
 
 @end
 
@@ -47,6 +49,12 @@
      *  Load up our fake data for the demo
      */
     self.demoData = [[DemoModelData alloc] init];
+    
+    /**
+     *  Load the Watson services
+     *
+     */
+    self.textToSpeech = [[TextToSpeechBridge alloc] init];
     
     /**
      *  You can set custom avatar sizes
@@ -299,6 +307,7 @@
     
     [self.demoData.messages addObject:message];
     [self finishSendingMessageAnimated:YES];
+    [self.textToSpeech synthesize:text];
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender

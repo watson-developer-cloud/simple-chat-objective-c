@@ -15,3 +15,23 @@
  **/
 
 import Foundation
+import TextToSpeechV1
+import AVFoundation
+
+class TextToSpeechBridge: NSObject {
+    
+    private var audioPlayer: AVAudioPlayer?
+    private let textToSpeech = TextToSpeech(
+        username: credentials["TextToSpeechUsername"]!,
+        password: credentials["TextToSpeechPassword"]!
+    )
+    
+    func synthesize(text: String) {
+        let failure = { (error: NSError) in print(error) }
+        textToSpeech.synthesize(text, voice: .US_Michael, audioFormat: .WAV, failure: failure) { data in
+            self.audioPlayer = try! AVAudioPlayer(data: data)
+            self.audioPlayer!.prepareToPlay()
+            self.audioPlayer!.play()
+        }
+    }
+}
