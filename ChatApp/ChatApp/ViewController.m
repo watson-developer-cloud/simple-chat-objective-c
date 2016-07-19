@@ -20,6 +20,7 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) Messages *messages;
+@property (strong, nonatomic) ConversationBridge *conversation;
 @property (strong, nonatomic) TextToSpeechBridge *textToSpeech;
 
 @end
@@ -45,7 +46,28 @@
     microphoneButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.inputToolbar.contentView.leftBarButtonItem = microphoneButton;
 
+    self.conversation = [[ConversationBridge alloc] init];
     self.textToSpeech = [[TextToSpeechBridge alloc] init];
+    
+    [self.conversation startConversation:nil success:^(NSString *response){
+        [self didReceiveConversationResponse:response];
+    }];
+}
+
+#pragma mark - Watson service callbacks
+
+- (void)didReceiveConversationResponse:(NSString *)response
+{
+    [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
+    
+    JSQMessage *message = [[JSQMessage alloc] initWithSenderId:kChatAppAvatarIdWatson
+                                             senderDisplayName:kChatAppAvatarDisplayNameWatson
+                                                          date:[NSDate date]
+                                                          text:response];
+    
+    [self.messages.messages addObject:message];
+    [self finishReceivingMessageAnimated:YES];
+    [self.textToSpeech synthesize:response];
 }
 
 #pragma mark - Custom menu actions for cells
@@ -73,7 +95,9 @@
     
     [self.messages.messages addObject:message];
     [self finishSendingMessageAnimated:YES];
-    [self.textToSpeech synthesize:text];
+    [self.conversation continueConversation:text success:^(NSString *response){
+        [self didReceiveConversationResponse:response];
+    }];
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender

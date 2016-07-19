@@ -17,6 +17,7 @@
 import Foundation
 import AVFoundation
 import TextToSpeechV1
+import ConversationV1
 
 class TextToSpeechBridge: NSObject {
     
@@ -32,6 +33,31 @@ class TextToSpeechBridge: NSObject {
             self.audioPlayer = try! AVAudioPlayer(data: data)
             self.audioPlayer!.prepareToPlay()
             self.audioPlayer!.play()
+        }
+    }
+}
+
+class ConversationBridge: NSObject {
+    
+    private var context: Context?
+    private let workspaceID = credentials["ConversationWorkspaceID"]!
+    private let conversation = Conversation(
+        username: credentials["ConversationUsername"]!,
+        password: credentials["ConversationPassword"]!,
+        version: "2016-07-19"
+    )
+    
+    func startConversation(text: String?, success: (String -> Void)) {
+        context = nil // clear context to start a new conversation
+        continueConversation(text, success: success)
+    }
+    
+    func continueConversation(text: String?, success: (String -> Void)) {
+        let failure = { (error: NSError) in print(error) }
+        conversation.message(workspaceID, text: text, context: context, failure: failure) { response in
+            self.context = response.context // save context to continue conversation
+            let text = response.output.text.joinWithSeparator("")
+            success(text)
         }
     }
 }
