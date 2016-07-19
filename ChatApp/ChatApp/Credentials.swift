@@ -19,6 +19,7 @@ import Foundation
 let credentials = [
     "ConversationUsername": "your-username-here",
     "ConversationPassword": "your-password-here",
+    "ConversationWorkspaceID": "your-workspace-here",
     "SpeechToTextUsername": "your-username-here",
     "SpeechToTextPassword": "your-password-here",
     "TextToSpeechUsername": "your-username-here",
