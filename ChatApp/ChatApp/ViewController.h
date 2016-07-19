@@ -17,8 +17,7 @@
 #import <UIKit/UIKit.h>
 #import <JSQMessagesViewController/JSQMessages.h>
 
-#import "DemoModelData.h"
-#import "NSUserDefaults+DemoSettings.h"
+#import "Messages.h"
 
 @interface ViewController : JSQMessagesViewController
 

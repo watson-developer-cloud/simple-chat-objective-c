@@ -17,8 +17,7 @@
 		7AD3EDF81D3D51FA001D77E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD3EDF61D3D51FA001D77E9 /* LaunchScreen.storyboard */; };
 		7AD3EE031D3D51FA001D77E9 /* ChatAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE021D3D51FA001D77E9 /* ChatAppTests.m */; };
 		7AD3EE0E1D3D51FA001D77E9 /* ChatAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE0D1D3D51FA001D77E9 /* ChatAppUITests.m */; };
-		7AD3EE1F1D3D5318001D77E9 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE1C1D3D5318001D77E9 /* DemoModelData.m */; };
-		7AD3EE201D3D5318001D77E9 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE1E1D3D5318001D77E9 /* NSUserDefaults+DemoSettings.m */; };
+		7AD3EE1F1D3D5318001D77E9 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE1C1D3D5318001D77E9 /* Messages.m */; };
 		7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */; };
 		7AD3EE2A1D3D53B3001D77E9 /* ConversationV1Experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */; };
 		7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE241D3D53B3001D77E9 /* Freddy.framework */; };
@@ -34,7 +33,7 @@
 		7AD3EE351D3D53BB001D77E9 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE271D3D53B3001D77E9 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE361D3D53BB001D77E9 /* TextToSpeechV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE391D3D5401001D77E9 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE381D3D5401001D77E9 /* Credentials.swift */; };
-		7AD3EE3B1D3D5886001D77E9 /* TextToSpeechBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE3A1D3D5886001D77E9 /* TextToSpeechBridge.swift */; };
+		7AD3EE3B1D3D5886001D77E9 /* WatsonBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */; };
 		E6E02D973B310B2DC66FD89F /* Pods_ChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F311D60B56A5196AF2F4046A /* Pods_ChatAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,10 +95,8 @@
 		7AD3EE091D3D51FA001D77E9 /* ChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD3EE0D1D3D51FA001D77E9 /* ChatAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatAppUITests.m; sourceTree = "<group>"; };
 		7AD3EE0F1D3D51FA001D77E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AD3EE1B1D3D5318001D77E9 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
-		7AD3EE1C1D3D5318001D77E9 /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
-		7AD3EE1D1D3D5318001D77E9 /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
-		7AD3EE1E1D3D5318001D77E9 /* NSUserDefaults+DemoSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+DemoSettings.m"; sourceTree = "<group>"; };
+		7AD3EE1B1D3D5318001D77E9 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
+		7AD3EE1C1D3D5318001D77E9 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
 		7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1Experimental.framework; path = Carthage/Build/iOS/ConversationV1Experimental.framework; sourceTree = "<group>"; };
 		7AD3EE241D3D53B3001D77E9 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
@@ -109,7 +106,7 @@
 		7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		7AD3EE371D3D5400001D77E9 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		7AD3EE381D3D5401001D77E9 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		7AD3EE3A1D3D5886001D77E9 /* TextToSpeechBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeechBridge.swift; sourceTree = "<group>"; };
+		7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatsonBridge.swift; sourceTree = "<group>"; };
 		8AA05FE04268A27E24AAAC6E /* Pods-ChatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,12 +207,10 @@
 				7AD3EDEC1D3D51FA001D77E9 /* AppDelegate.m */,
 				7AD3EDEE1D3D51FA001D77E9 /* ViewController.h */,
 				7AD3EDEF1D3D51FA001D77E9 /* ViewController.m */,
-				7AD3EE1B1D3D5318001D77E9 /* DemoModelData.h */,
-				7AD3EE1C1D3D5318001D77E9 /* DemoModelData.m */,
-				7AD3EE1D1D3D5318001D77E9 /* NSUserDefaults+DemoSettings.h */,
-				7AD3EE1E1D3D5318001D77E9 /* NSUserDefaults+DemoSettings.m */,
+				7AD3EE1B1D3D5318001D77E9 /* Messages.h */,
+				7AD3EE1C1D3D5318001D77E9 /* Messages.m */,
 				7AD3EE381D3D5401001D77E9 /* Credentials.swift */,
-				7AD3EE3A1D3D5886001D77E9 /* TextToSpeechBridge.swift */,
+				7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */,
 				7AD3EDF11D3D51FA001D77E9 /* Main.storyboard */,
 				7AD3EDF41D3D51FA001D77E9 /* Assets.xcassets */,
 				7AD3EDF61D3D51FA001D77E9 /* LaunchScreen.storyboard */,
@@ -518,11 +513,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD3EE391D3D5401001D77E9 /* Credentials.swift in Sources */,
-				7AD3EE201D3D5318001D77E9 /* NSUserDefaults+DemoSettings.m in Sources */,
 				7AD3EDF01D3D51FA001D77E9 /* ViewController.m in Sources */,
 				7AD3EDED1D3D51FA001D77E9 /* AppDelegate.m in Sources */,
-				7AD3EE3B1D3D5886001D77E9 /* TextToSpeechBridge.swift in Sources */,
-				7AD3EE1F1D3D5318001D77E9 /* DemoModelData.m in Sources */,
+				7AD3EE3B1D3D5886001D77E9 /* WatsonBridge.swift in Sources */,
+				7AD3EE1F1D3D5318001D77E9 /* Messages.m in Sources */,
 				7AD3EDEA1D3D51FA001D77E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

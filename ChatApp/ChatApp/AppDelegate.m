@@ -16,8 +16,6 @@
 
 #import "AppDelegate.h"
 
-#import "NSUserDefaults+DemoSettings.h"
-
 @interface AppDelegate ()
 
 @end
@@ -27,11 +25,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    // Load our default settings
-    [NSUserDefaults saveIncomingAvatarSetting:YES];
-    [NSUserDefaults saveOutgoingAvatarSetting:YES];
-    
     return YES;
 }
 
