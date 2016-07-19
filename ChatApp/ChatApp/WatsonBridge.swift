@@ -18,6 +18,7 @@ import Foundation
 import AVFoundation
 import TextToSpeechV1
 import ConversationV1
+import SpeechToTextV1
 
 class TextToSpeechBridge: NSObject {
     
@@ -59,5 +60,33 @@ class ConversationBridge: NSObject {
             let text = response.output.text.joinWithSeparator("")
             success(text)
         }
+    }
+}
+
+class SpeechToTextBridge: NSObject {
+    
+    private var stopStreaming: SpeechToText.StopStreaming?
+    private let speechToText = SpeechToText(
+        username: credentials["SpeechToTextUsername"]!,
+        password: credentials["SpeechToTextPassword"]!
+    )
+    
+    func startTranscribing(success: (String -> Void)) {
+        var settings = TranscriptionSettings(contentType: .L16(rate: 44100, channels: 1))
+        settings.continuous = false
+        settings.interimResults = true
+        
+        let failure = { (error: NSError) in print(error) }
+        stopStreaming = speechToText.transcribe(settings, failure: failure) { results in
+            if let transcript = results.last?.alternatives.last?.transcript {
+                success(transcript)
+            }
+        }
+    }
+    
+    func stopTranscribing(success: (Void -> Void)? = nil) {
+        stopStreaming?()
+        stopStreaming = nil
+        success?()
     }
 }

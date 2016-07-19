@@ -22,6 +22,7 @@
 @property (strong, nonatomic) Messages *messages;
 @property (strong, nonatomic) ConversationBridge *conversation;
 @property (strong, nonatomic) TextToSpeechBridge *textToSpeech;
+@property (strong, nonatomic) SpeechToTextBridge *speechToText;
 
 @end
 
@@ -45,9 +46,13 @@
     [microphoneButton setImage:microphoneImage forState:UIControlStateNormal];
     microphoneButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.inputToolbar.contentView.leftBarButtonItem = microphoneButton;
+    
+    [microphoneButton addTarget:self action:@selector(didPressMicrophoneButton:) forControlEvents:UIControlEventTouchDown];
+    [microphoneButton addTarget:self action:@selector(didReleaseMicrophoneButton:) forControlEvents:UIControlEventTouchUpInside];
 
     self.conversation = [[ConversationBridge alloc] init];
     self.textToSpeech = [[TextToSpeechBridge alloc] init];
+    self.speechToText = [[SpeechToTextBridge alloc] init];
     
     [self.conversation startConversation:nil success:^(NSString *response){
         [self didReceiveConversationResponse:response];
@@ -68,6 +73,19 @@
     [self.messages.messages addObject:message];
     [self finishReceivingMessageAnimated:YES];
     [self.textToSpeech synthesize:response];
+}
+
+- (void)didPressMicrophoneButton:(UIButton *)sender
+{
+    [self.speechToText startTranscribing:^(NSString *transcript) {
+        self.inputToolbar.contentView.textView.text = transcript;
+        [self.inputToolbar toggleSendButtonEnabled];
+    }];
+}
+
+- (void)didReleaseMicrophoneButton:(UIButton *)sender
+{
+    [self.speechToText stopTranscribing:nil];
 }
 
 #pragma mark - Custom menu actions for cells
