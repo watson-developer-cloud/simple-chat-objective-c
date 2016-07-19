@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		399CEE66AB6AF585D148CC3E /* Pods_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */; };
 		5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */; };
+		7AB445531D3ECF4100E8748A /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
+		7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
+		7AB445551D3ECF4E00E8748A /* ConversationV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EDEA1D3D51FA001D77E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDE91D3D51FA001D77E9 /* main.m */; };
 		7AD3EDED1D3D51FA001D77E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDEC1D3D51FA001D77E9 /* AppDelegate.m */; };
 		7AD3EDF01D3D51FA001D77E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDEF1D3D51FA001D77E9 /* ViewController.m */; };
@@ -19,14 +22,12 @@
 		7AD3EE0E1D3D51FA001D77E9 /* ChatAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE0D1D3D51FA001D77E9 /* ChatAppUITests.m */; };
 		7AD3EE1F1D3D5318001D77E9 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE1C1D3D5318001D77E9 /* Messages.m */; };
 		7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */; };
-		7AD3EE2A1D3D53B3001D77E9 /* ConversationV1Experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */; };
 		7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE241D3D53B3001D77E9 /* Freddy.framework */; };
 		7AD3EE2C1D3D53B3001D77E9 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE251D3D53B3001D77E9 /* RestKit.framework */; };
 		7AD3EE2D1D3D53B3001D77E9 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; };
 		7AD3EE2E1D3D53B3001D77E9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE271D3D53B3001D77E9 /* Starscream.framework */; };
 		7AD3EE2F1D3D53B3001D77E9 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */; };
 		7AD3EE301D3D53BB001D77E9 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AD3EE311D3D53BB001D77E9 /* ConversationV1Experimental.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE321D3D53BB001D77E9 /* Freddy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE241D3D53B3001D77E9 /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE331D3D53BB001D77E9 /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE251D3D53B3001D77E9 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE341D3D53BB001D77E9 /* SpeechToTextV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -62,9 +63,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7AD3EE301D3D53BB001D77E9 /* Alamofire.framework in CopyFiles */,
-				7AD3EE311D3D53BB001D77E9 /* ConversationV1Experimental.framework in CopyFiles */,
 				7AD3EE321D3D53BB001D77E9 /* Freddy.framework in CopyFiles */,
 				7AD3EE331D3D53BB001D77E9 /* RestKit.framework in CopyFiles */,
+				7AB445551D3ECF4E00E8748A /* ConversationV1.framework in CopyFiles */,
 				7AD3EE341D3D53BB001D77E9 /* SpeechToTextV1.framework in CopyFiles */,
 				7AD3EE351D3D53BB001D77E9 /* Starscream.framework in CopyFiles */,
 				7AD3EE361D3D53BB001D77E9 /* TextToSpeechV1.framework in CopyFiles */,
@@ -79,6 +80,7 @@
 		33E5A72F799B1045339B2114 /* Pods-ChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C891A35ED0BC28998D9703F /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		6ADD5A95A47F60B45C0CC379 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7AB445521D3ECF4100E8748A /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
 		7AD3EDE51D3D51FA001D77E9 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD3EDE91D3D51FA001D77E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AD3EDEB1D3D51FA001D77E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 		7AD3EE1B1D3D5318001D77E9 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
 		7AD3EE1C1D3D5318001D77E9 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
 		7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1Experimental.framework; path = Carthage/Build/iOS/ConversationV1Experimental.framework; sourceTree = "<group>"; };
 		7AD3EE241D3D53B3001D77E9 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
 		7AD3EE251D3D53B3001D77E9 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 		7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
@@ -122,9 +123,10 @@
 				7AD3EE2E1D3D53B3001D77E9 /* Starscream.framework in Frameworks */,
 				7AD3EE2C1D3D53B3001D77E9 /* RestKit.framework in Frameworks */,
 				7AD3EE2F1D3D53B3001D77E9 /* TextToSpeechV1.framework in Frameworks */,
+				7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */,
 				7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */,
 				7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */,
-				7AD3EE2A1D3D53B3001D77E9 /* ConversationV1Experimental.framework in Frameworks */,
+				7AB445531D3ECF4100E8748A /* ConversationV1.framework in Frameworks */,
 				7AD3EE2D1D3D53B3001D77E9 /* SpeechToTextV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,8 +153,8 @@
 		0FE0208FDA91A1BCC1917A88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AB445521D3ECF4100E8748A /* ConversationV1.framework */,
 				7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */,
-				7AD3EE231D3D53B3001D77E9 /* ConversationV1Experimental.framework */,
 				7AD3EE241D3D53B3001D77E9 /* Freddy.framework */,
 				7AD3EE251D3D53B3001D77E9 /* RestKit.framework */,
 				7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */,
