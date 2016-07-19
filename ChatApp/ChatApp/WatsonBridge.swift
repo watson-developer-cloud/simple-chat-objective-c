@@ -15,8 +15,8 @@
  **/
 
 import Foundation
-import TextToSpeechV1
 import AVFoundation
+import TextToSpeechV1
 
 class TextToSpeechBridge: NSObject {
     
