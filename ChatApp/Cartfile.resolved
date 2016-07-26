@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "3.4.1"
 github "bignerdranch/Freddy" "2.1.0"
 github "daltoniam/Starscream" "1.1.3"
-github "watson-developer-cloud/ios-sdk" "45440a042f301f29cf57df3b2a64781cb5d8ec31"
+github "watson-developer-cloud/ios-sdk" "v0.5.0"
