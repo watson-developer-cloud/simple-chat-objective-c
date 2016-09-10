@@ -85,7 +85,7 @@
 
 - (void)didReleaseMicrophoneButton:(UIButton *)sender
 {
-    [self.speechToText stopTranscribing:nil];
+    [self.speechToText stopTranscribing];
 }
 
 #pragma mark - Custom menu actions for cells

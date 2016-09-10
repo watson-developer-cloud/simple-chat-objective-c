@@ -65,28 +65,36 @@ class ConversationBridge: NSObject {
 
 class SpeechToTextBridge: NSObject {
     
-    private var stopStreaming: SpeechToText.StopStreaming?
     private let speechToText = SpeechToText(
         username: credentials["SpeechToTextUsername"]!,
         password: credentials["SpeechToTextPassword"]!
     )
     
     func startTranscribing(success: (String -> Void)) {
-        var settings = TranscriptionSettings(contentType: .L16(rate: 44100, channels: 1))
-        settings.continuous = false
-        settings.interimResults = true
+        print("start transcribing")
+        let permission = AVAudioSession.sharedInstance().recordPermission()
+        if permission == .Denied {
+            print("denied")
+        } else if permission == .Granted {
+            print("granted")
+        } else if permission == .Undetermined {
+            print("undetermined")
+        } else {
+            print("???")
+        }
         
+        print("permission: \(AVAudioSession.sharedInstance().recordPermission())")
+        var settings = RecognitionSettings(contentType: .Opus)
+        settings.interimResults = true
+        settings.continuous = true
         let failure = { (error: NSError) in print(error) }
-        stopStreaming = speechToText.transcribe(settings, failure: failure) { results in
-            if let transcript = results.last?.alternatives.last?.transcript {
-                success(transcript)
-            }
+        speechToText.recognizeMicrophone(settings, failure: failure) { results in
+            success(results.bestTranscript)
         }
     }
     
-    func stopTranscribing(success: (Void -> Void)? = nil) {
-        stopStreaming?()
-        stopStreaming = nil
-        success?()
+    func stopTranscribing() {
+        print("stop transcribing")
+        speechToText.stopRecognizeMicrophone()
     }
 }
