@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		399CEE66AB6AF585D148CC3E /* Pods_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */; };
 		5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */; };
-		7AB445531D3ECF4100E8748A /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
 		7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
 		7AB445551D3ECF4E00E8748A /* ConversationV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EDEA1D3D51FA001D77E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDE91D3D51FA001D77E9 /* main.m */; };
@@ -126,7 +125,6 @@
 				7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */,
 				7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */,
 				7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */,
-				7AB445531D3ECF4100E8748A /* ConversationV1.framework in Frameworks */,
 				7AD3EE2D1D3D53B3001D77E9 /* SpeechToTextV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,11 +318,12 @@
 		7AD3EDDD1D3D51FA001D77E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Watson Developer Cloud";
 				TargetAttributes = {
 					7AD3EDE41D3D51FA001D77E9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					7AD3EDFD1D3D51FA001D77E9 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -587,8 +586,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -632,8 +633,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -652,6 +655,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -675,6 +679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -695,6 +700,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.watson.developer-cloud.ChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
