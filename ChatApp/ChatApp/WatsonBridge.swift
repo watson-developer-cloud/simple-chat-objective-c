@@ -65,36 +65,43 @@ class ConversationBridge: NSObject {
 
 class SpeechToTextBridge: NSObject {
     
-    private let speechToText = SpeechToText(
+    private let session = SpeechToTextSession(
         username: credentials["SpeechToTextUsername"]!,
         password: credentials["SpeechToTextPassword"]!
     )
     
-    func startTranscribing(success: (String -> Void)) {
-        print("start transcribing")
-        let permission = AVAudioSession.sharedInstance().recordPermission()
-        if permission == .Denied {
-            print("denied")
-        } else if permission == .Granted {
-            print("granted")
-        } else if permission == .Undetermined {
-            print("undetermined")
-        } else {
-            print("???")
-        }
-        
-        print("permission: \(AVAudioSession.sharedInstance().recordPermission())")
+    func prepare(onResults: (String -> Void)) {
+        session.onConnect = { print("Speech to Text: Connected") }
+        session.onDisconnect = { print("Speech to Text: Disconnected") }
+        session.onError = { error in print("Speech to Text: \(error)") }
+        session.onPowerData = { decibels in print("Microphone Volume: \(decibels)") }
+        session.onResults = { results in onResults(results.bestTranscript) }
+    }
+    
+    func connect() {
+        session.connect()
+    }
+    
+    func startRequest() {
         var settings = RecognitionSettings(contentType: .Opus)
         settings.interimResults = true
         settings.continuous = true
-        let failure = { (error: NSError) in print(error) }
-        speechToText.recognizeMicrophone(settings, failure: failure) { results in
-            success(results.bestTranscript)
-        }
+        session.startRequest(settings)
     }
     
-    func stopTranscribing() {
-        print("stop transcribing")
-        speechToText.stopRecognizeMicrophone()
+    func startMicrophone() {
+        session.startMicrophone()
+    }
+    
+    func stopMicrophone() {
+        session.stopMicrophone()
+    }
+    
+    func stopRequest() {
+        session.stopRequest()
+    }
+    
+    func disconnect() {
+        session.disconnect()
     }
 }

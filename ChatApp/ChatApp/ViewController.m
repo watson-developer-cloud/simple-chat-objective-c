@@ -57,6 +57,13 @@
     [self.conversation startConversation:nil success:^(NSString *response){
         [self didReceiveConversationResponse:response];
     }];
+    
+    [self.speechToText prepare:^(NSString *transcript) {
+        self.inputToolbar.contentView.textView.text = transcript;
+        [self.inputToolbar toggleSendButtonEnabled];
+    }];
+    
+    [self.speechToText connect];
 }
 
 #pragma mark - Watson service callbacks
@@ -77,15 +84,20 @@
 
 - (void)didPressMicrophoneButton:(UIButton *)sender
 {
-    [self.speechToText startTranscribing:^(NSString *transcript) {
-        self.inputToolbar.contentView.textView.text = transcript;
-        [self.inputToolbar toggleSendButtonEnabled];
-    }];
+    [self.speechToText connect]; // connect, if not already connected
+    [self.speechToText startRequest]; // start a new recognition request
+    [self.speechToText startMicrophone]; // start streaming microphone audio
 }
 
 - (void)didReleaseMicrophoneButton:(UIButton *)sender
 {
-    [self.speechToText stopTranscribing];
+    [self.speechToText stopMicrophone]; // stop streaming microphone audio
+    [self.speechToText stopRequest]; // stop the recognition request
+    
+    // No need to disconnect -- the connection will timeout if the microphone
+    // is not used again within 30 seconds. This avoids the overhead of
+    // connecting and disconnecting the session with every press of the
+    // microphone button.
 }
 
 #pragma mark - Custom menu actions for cells
