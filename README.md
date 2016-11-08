@@ -20,7 +20,7 @@ This project uses both [Carthage](https://github.com/Carthage/Carthage) and [Coc
 
 ### Getting Started
 
-1. Clone the repository: `git clone git@github.com:IBM-MIL/ios-sdk-chat-app.git`
+1. Clone the repository: `git clone https://github.com/watson-developer-cloud/simple-chat-objective-c.git`
 2. Build the dependencies: `carthage update --platform iOS`
 3. Open `ChatApp.xcworkspace`
 4. Update your service credentials in `Credentials.swift`
