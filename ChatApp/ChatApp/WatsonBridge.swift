@@ -48,7 +48,7 @@ class ConversationBridge: NSObject {
         version: "2016-07-19"
     )
     
-    func startConversation(text: String?, success: @escaping ((String) -> Void)) {
+    func startConversation(success: @escaping ((String) -> Void)) {
         context = nil // clear context to start a new conversation
         let failure = { (error: Error) in print(error) }
         conversation.message(withWorkspace: workspaceID, failure: failure) { response in
