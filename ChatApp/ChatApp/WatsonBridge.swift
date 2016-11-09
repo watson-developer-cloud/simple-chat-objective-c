@@ -45,7 +45,7 @@ class ConversationBridge: NSObject {
     private let conversation = Conversation(
         username: Credentials.ConversationUsername,
         password: Credentials.ConversationPassword,
-        version: "2016-07-19"
+        version: "2016-11-02"
     )
     
     func startConversation(success: @escaping ((String) -> Void)) {
