@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		399CEE66AB6AF585D148CC3E /* Pods_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */; };
 		5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */; };
+		7A14ACC31DD3B380004FB9F6 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */; };
 		7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
 		7AB445551D3ECF4E00E8748A /* ConversationV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EDEA1D3D51FA001D77E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDE91D3D51FA001D77E9 /* main.m */; };
@@ -20,19 +21,12 @@
 		7AD3EE031D3D51FA001D77E9 /* ChatAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE021D3D51FA001D77E9 /* ChatAppTests.m */; };
 		7AD3EE0E1D3D51FA001D77E9 /* ChatAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE0D1D3D51FA001D77E9 /* ChatAppUITests.m */; };
 		7AD3EE1F1D3D5318001D77E9 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE1C1D3D5318001D77E9 /* Messages.m */; };
-		7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */; };
-		7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE241D3D53B3001D77E9 /* Freddy.framework */; };
 		7AD3EE2C1D3D53B3001D77E9 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE251D3D53B3001D77E9 /* RestKit.framework */; };
 		7AD3EE2D1D3D53B3001D77E9 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; };
-		7AD3EE2E1D3D53B3001D77E9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE271D3D53B3001D77E9 /* Starscream.framework */; };
 		7AD3EE2F1D3D53B3001D77E9 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */; };
-		7AD3EE301D3D53BB001D77E9 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AD3EE321D3D53BB001D77E9 /* Freddy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE241D3D53B3001D77E9 /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE331D3D53BB001D77E9 /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE251D3D53B3001D77E9 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE341D3D53BB001D77E9 /* SpeechToTextV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AD3EE351D3D53BB001D77E9 /* Starscream.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE271D3D53B3001D77E9 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD3EE361D3D53BB001D77E9 /* TextToSpeechV1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AD3EE391D3D5401001D77E9 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE381D3D5401001D77E9 /* Credentials.swift */; };
 		7AD3EE3B1D3D5886001D77E9 /* WatsonBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */; };
 		E6E02D973B310B2DC66FD89F /* Pods_ChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F311D60B56A5196AF2F4046A /* Pods_ChatAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,12 +55,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7AD3EE301D3D53BB001D77E9 /* Alamofire.framework in CopyFiles */,
-				7AD3EE321D3D53BB001D77E9 /* Freddy.framework in CopyFiles */,
 				7AD3EE331D3D53BB001D77E9 /* RestKit.framework in CopyFiles */,
 				7AB445551D3ECF4E00E8748A /* ConversationV1.framework in CopyFiles */,
 				7AD3EE341D3D53BB001D77E9 /* SpeechToTextV1.framework in CopyFiles */,
-				7AD3EE351D3D53BB001D77E9 /* Starscream.framework in CopyFiles */,
 				7AD3EE361D3D53BB001D77E9 /* TextToSpeechV1.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +70,7 @@
 		33E5A72F799B1045339B2114 /* Pods-ChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C891A35ED0BC28998D9703F /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		6ADD5A95A47F60B45C0CC379 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		7AB445521D3ECF4100E8748A /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
 		7AD3EDE51D3D51FA001D77E9 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD3EDE91D3D51FA001D77E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,14 +90,10 @@
 		7AD3EE0F1D3D51FA001D77E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD3EE1B1D3D5318001D77E9 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
 		7AD3EE1C1D3D5318001D77E9 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
-		7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		7AD3EE241D3D53B3001D77E9 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
 		7AD3EE251D3D53B3001D77E9 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 		7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
-		7AD3EE271D3D53B3001D77E9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		7AD3EE371D3D5400001D77E9 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		7AD3EE381D3D5401001D77E9 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatsonBridge.swift; sourceTree = "<group>"; };
 		8AA05FE04268A27E24AAAC6E /* Pods-ChatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,12 +107,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */,
-				7AD3EE2E1D3D53B3001D77E9 /* Starscream.framework in Frameworks */,
 				7AD3EE2C1D3D53B3001D77E9 /* RestKit.framework in Frameworks */,
 				7AD3EE2F1D3D53B3001D77E9 /* TextToSpeechV1.framework in Frameworks */,
 				7AB445541D3ECF4E00E8748A /* ConversationV1.framework in Frameworks */,
-				7AD3EE291D3D53B3001D77E9 /* Alamofire.framework in Frameworks */,
-				7AD3EE2B1D3D53B3001D77E9 /* Freddy.framework in Frameworks */,
 				7AD3EE2D1D3D53B3001D77E9 /* SpeechToTextV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,11 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				7AB445521D3ECF4100E8748A /* ConversationV1.framework */,
-				7AD3EE221D3D53B3001D77E9 /* Alamofire.framework */,
-				7AD3EE241D3D53B3001D77E9 /* Freddy.framework */,
 				7AD3EE251D3D53B3001D77E9 /* RestKit.framework */,
 				7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */,
-				7AD3EE271D3D53B3001D77E9 /* Starscream.framework */,
 				7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */,
 				D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */,
 				F311D60B56A5196AF2F4046A /* Pods_ChatAppTests.framework */,
@@ -209,8 +191,8 @@
 				7AD3EDEF1D3D51FA001D77E9 /* ViewController.m */,
 				7AD3EE1B1D3D5318001D77E9 /* Messages.h */,
 				7AD3EE1C1D3D5318001D77E9 /* Messages.m */,
-				7AD3EE381D3D5401001D77E9 /* Credentials.swift */,
 				7AD3EE3A1D3D5886001D77E9 /* WatsonBridge.swift */,
+				7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */,
 				7AD3EDF11D3D51FA001D77E9 /* Main.storyboard */,
 				7AD3EDF41D3D51FA001D77E9 /* Assets.xcassets */,
 				7AD3EDF61D3D51FA001D77E9 /* LaunchScreen.storyboard */,
@@ -301,6 +283,7 @@
 				7AD3EE061D3D51FA001D77E9 /* Frameworks */,
 				7AD3EE071D3D51FA001D77E9 /* Resources */,
 				55374D6D4AA052F6C9F38E49 /* [CP] Copy Pods Resources */,
+				29B8B5050E996A264E5CA3B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +368,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29B8B5050E996A264E5CA3B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatAppUITests/Pods-ChatAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5478633CB019A288A03FE201 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		739CD798085761C619800CB5 /* [CP] Copy Pods Resources */ = {
@@ -457,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7F07AD8B73074123BBD330A6 /* [CP] Embed Pods Frameworks */ = {
@@ -487,7 +485,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ECA6EE9AEE0A99662EA242BB /* [CP] Embed Pods Frameworks */ = {
@@ -512,7 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD3EE391D3D5401001D77E9 /* Credentials.swift in Sources */,
+				7A14ACC31DD3B380004FB9F6 /* Credentials.swift in Sources */,
 				7AD3EDF01D3D51FA001D77E9 /* ViewController.m in Sources */,
 				7AD3EDED1D3D51FA001D77E9 /* AppDelegate.m in Sources */,
 				7AD3EE3B1D3D5886001D77E9 /* WatsonBridge.swift in Sources */,
@@ -679,7 +677,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -700,7 +698,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.watson.developer-cloud.ChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

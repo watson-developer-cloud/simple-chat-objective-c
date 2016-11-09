@@ -24,13 +24,13 @@ class TextToSpeechBridge: NSObject {
     
     private var audioPlayer: AVAudioPlayer?
     private let textToSpeech = TextToSpeech(
-        username: credentials["TextToSpeechUsername"]!,
-        password: credentials["TextToSpeechPassword"]!
+        username: Credentials.TextToSpeechUsername,
+        password: Credentials.TextToSpeechPassword
     )
     
     func synthesize(text: String) {
-        let failure = { (error: NSError) in print(error) }
-        textToSpeech.synthesize(text, voice: .US_Michael, audioFormat: .WAV, failure: failure) { data in
+        let failure = { (error: Error) in print(error) }
+        textToSpeech.synthesize(text, voice: SynthesisVoice.us_Michael.rawValue, audioFormat: .wav, failure: failure) { data in
             self.audioPlayer = try! AVAudioPlayer(data: data)
             self.audioPlayer!.prepareToPlay()
             self.audioPlayer!.play()
@@ -41,23 +41,29 @@ class TextToSpeechBridge: NSObject {
 class ConversationBridge: NSObject {
     
     private var context: Context?
-    private let workspaceID = credentials["ConversationWorkspaceID"]!
+    private let workspaceID = Credentials.ConversationWorkspaceID
     private let conversation = Conversation(
-        username: credentials["ConversationUsername"]!,
-        password: credentials["ConversationPassword"]!,
+        username: Credentials.ConversationUsername,
+        password: Credentials.ConversationPassword,
         version: "2016-07-19"
     )
     
-    func startConversation(text: String?, success: (String -> Void)) {
+    func startConversation(text: String?, success: @escaping ((String) -> Void)) {
         context = nil // clear context to start a new conversation
-        continueConversation(text, success: success)
+        let failure = { (error: Error) in print(error) }
+        conversation.message(withWorkspace: workspaceID, failure: failure) { response in
+            self.context = response.context // save context to continue conversation
+            let text = response.output.text.joined(separator: "")
+            success(text)
+        }
     }
     
-    func continueConversation(text: String?, success: (String -> Void)) {
-        let failure = { (error: NSError) in print(error) }
-        conversation.message(workspaceID, text: text, context: context, failure: failure) { response in
+    func continueConversation(text: String, success: @escaping ((String) -> Void)) {
+        let failure = { (error: Error) in print(error) }
+        let request = MessageRequest(text: text, context: context)
+        conversation.message(withWorkspace: workspaceID, request: request, failure: failure) { response in
             self.context = response.context // save context to continue conversation
-            let text = response.output.text.joinWithSeparator("")
+            let text = response.output.text.joined(separator: "")
             success(text)
         }
     }
@@ -66,11 +72,11 @@ class ConversationBridge: NSObject {
 class SpeechToTextBridge: NSObject {
     
     private let session = SpeechToTextSession(
-        username: credentials["SpeechToTextUsername"]!,
-        password: credentials["SpeechToTextPassword"]!
+        username: Credentials.SpeechToTextUsername,
+        password: Credentials.SpeechToTextPassword
     )
     
-    func prepare(onResults: (String -> Void)) {
+    func prepare(onResults: @escaping ((String) -> Void)) {
         session.onConnect = { print("Speech to Text: Connected") }
         session.onDisconnect = { print("Speech to Text: Disconnected") }
         session.onError = { error in print("Speech to Text: \(error)") }
@@ -83,10 +89,10 @@ class SpeechToTextBridge: NSObject {
     }
     
     func startRequest() {
-        var settings = RecognitionSettings(contentType: .Opus)
+        var settings = RecognitionSettings(contentType: .opus)
         settings.interimResults = true
         settings.continuous = true
-        session.startRequest(settings)
+        session.startRequest(settings: settings)
     }
     
     func startMicrophone() {

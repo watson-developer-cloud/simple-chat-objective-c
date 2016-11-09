@@ -14,14 +14,12 @@
  * limitations under the License.
  **/
 
-import Foundation
-
-let credentials = [
-    "ConversationUsername": "your-username-here",
-    "ConversationPassword": "your-password-here",
-    "ConversationWorkspaceID": "your-workspace-here",
-    "SpeechToTextUsername": "your-username-here",
-    "SpeechToTextPassword": "your-password-here",
-    "TextToSpeechUsername": "your-username-here",
-    "TextToSpeechPassword": "your-password-here",
-]
+struct Credentials {
+    static let ConversationUsername = "your-username-here"
+    static let ConversationPassword = "your-password-here"
+    static let ConversationWorkspaceID = "your-workspace-id-here"
+    static let SpeechToTextUsername = "your-username-here"
+    static let SpeechToTextPassword = "your-password-here"
+    static let TextToSpeechUsername = "your-username-here"
+    static let TextToSpeechPassword = "your-password-here"
+}
