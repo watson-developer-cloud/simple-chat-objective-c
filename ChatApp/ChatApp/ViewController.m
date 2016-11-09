@@ -54,11 +54,11 @@
     self.textToSpeech = [[TextToSpeechBridge alloc] init];
     self.speechToText = [[SpeechToTextBridge alloc] init];
     
-    [self.conversation startConversation:nil success:^(NSString *response){
+    [self.conversation startConversationWithSuccess:^(NSString *response){
         [self didReceiveConversationResponse:response];
     }];
     
-    [self.speechToText prepare:^(NSString *transcript) {
+    [self.speechToText prepareOnResults:^(NSString *transcript) {
         self.inputToolbar.contentView.textView.text = transcript;
         [self.inputToolbar toggleSendButtonEnabled];
     }];
@@ -79,7 +79,7 @@
     
     [self.messages.messages addObject:message];
     [self finishReceivingMessageAnimated:YES];
-    [self.textToSpeech synthesize:response];
+    [self.textToSpeech synthesizeWithText:response];
 }
 
 - (void)didPressMicrophoneButton:(UIButton *)sender
@@ -125,7 +125,7 @@
     
     [self.messages.messages addObject:message];
     [self finishSendingMessageAnimated:YES];
-    [self.conversation continueConversation:text success:^(NSString *response){
+    [self.conversation continueConversationWithText:text success:^(NSString *response){
         [self didReceiveConversationResponse:response];
     }];
 }
@@ -221,7 +221,7 @@
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)sender;
     JSQMessagesCellTextView *textView = cell.textView;
     if (textView) {
-        [self.textToSpeech synthesize:textView.text];
+        [self.textToSpeech synthesizeWithText:textView.text];
     }
 }
 
