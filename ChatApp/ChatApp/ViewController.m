@@ -78,7 +78,9 @@
                                                           text:response];
     
     [self.messages.messages addObject:message];
-    [self finishReceivingMessageAnimated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self finishReceivingMessageAnimated:YES];
+    });
     [self.textToSpeech synthesizeWithText:response];
 }
 
