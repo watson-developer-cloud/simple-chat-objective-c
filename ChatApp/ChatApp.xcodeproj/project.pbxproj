@@ -700,7 +700,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -721,7 +721,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.watson.developer-cloud.ChatApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChatApp/ChatApp-Bridging-Header.h";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
