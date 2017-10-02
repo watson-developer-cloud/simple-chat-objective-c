@@ -41,7 +41,7 @@ class TextToSpeechBridge: NSObject {
 class ConversationBridge: NSObject {
     
     private var context: Context?
-    private let workspaceID = Credentials.ConversationWorkspaceID
+    private let workspaceID = Credentials.ConversationWorkspace
     private let conversation = Conversation(
         username: Credentials.ConversationUsername,
         password: Credentials.ConversationPassword,
