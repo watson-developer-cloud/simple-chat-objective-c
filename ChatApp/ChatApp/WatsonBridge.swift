@@ -91,7 +91,6 @@ class SpeechToTextBridge: NSObject {
     func startRequest() {
         var settings = RecognitionSettings(contentType: .opus)
         settings.interimResults = true
-        settings.continuous = true
         session.startRequest(settings: settings)
     }
     
