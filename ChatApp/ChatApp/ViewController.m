@@ -15,7 +15,7 @@
  **/
 
 #import "ViewController.h"
-#import "ChatApp-swift.h"
+#import "ChatApp-Swift.h"
 
 @interface ViewController ()
 
