@@ -20,7 +20,7 @@ import TextToSpeechV1
 import ConversationV1
 import SpeechToTextV1
 
-class TextToSpeechBridge: NSObject {
+@objc class TextToSpeechBridge: NSObject {
     
     private var audioPlayer: AVAudioPlayer?
     private let textToSpeech = TextToSpeech(
@@ -28,7 +28,7 @@ class TextToSpeechBridge: NSObject {
         password: Credentials.TextToSpeechPassword
     )
     
-    func synthesize(text: String) {
+    @objc func synthesize(text: String) {
         let failure = { (error: Error) in print(error) }
         textToSpeech.synthesize(text, voice: SynthesisVoice.us_Michael.rawValue, audioFormat: .wav, failure: failure) { data in
             self.audioPlayer = try! AVAudioPlayer(data: data)
@@ -38,17 +38,17 @@ class TextToSpeechBridge: NSObject {
     }
 }
 
-class ConversationBridge: NSObject {
+@objc class ConversationBridge: NSObject {
     
     private var context: Context?
-    private let workspaceID = Credentials.ConversationWorkspaceID
+    private let workspaceID = Credentials.ConversationWorkspace
     private let conversation = Conversation(
         username: Credentials.ConversationUsername,
         password: Credentials.ConversationPassword,
         version: "2016-11-02"
     )
     
-    func startConversation(success: @escaping ((String) -> Void)) {
+    @objc func startConversation(success: @escaping ((String) -> Void)) {
         context = nil // clear context to start a new conversation
         let failure = { (error: Error) in print(error) }
         conversation.message(withWorkspace: workspaceID, failure: failure) { response in
@@ -58,7 +58,7 @@ class ConversationBridge: NSObject {
         }
     }
     
-    func continueConversation(text: String, success: @escaping ((String) -> Void)) {
+    @objc func continueConversation(text: String, success: @escaping ((String) -> Void)) {
         let failure = { (error: Error) in print(error) }
         let request = MessageRequest(text: text, context: context)
         conversation.message(withWorkspace: workspaceID, request: request, failure: failure) { response in
@@ -69,14 +69,14 @@ class ConversationBridge: NSObject {
     }
 }
 
-class SpeechToTextBridge: NSObject {
+@objc class SpeechToTextBridge: NSObject {
     
     private let session = SpeechToTextSession(
         username: Credentials.SpeechToTextUsername,
         password: Credentials.SpeechToTextPassword
     )
     
-    func prepare(onResults: @escaping ((String) -> Void)) {
+    @objc func prepare(onResults: @escaping ((String) -> Void)) {
         session.onConnect = { print("Speech to Text: Connected") }
         session.onDisconnect = { print("Speech to Text: Disconnected") }
         session.onError = { error in print("Speech to Text: \(error)") }
@@ -84,30 +84,29 @@ class SpeechToTextBridge: NSObject {
         session.onResults = { results in onResults(results.bestTranscript) }
     }
     
-    func connect() {
+    @objc func connect() {
         session.connect()
     }
     
-    func startRequest() {
+    @objc func startRequest() {
         var settings = RecognitionSettings(contentType: .opus)
         settings.interimResults = true
-        settings.continuous = true
         session.startRequest(settings: settings)
     }
     
-    func startMicrophone() {
+    @objc func startMicrophone() {
         session.startMicrophone()
     }
     
-    func stopMicrophone() {
+    @objc func stopMicrophone() {
         session.stopMicrophone()
     }
     
-    func stopRequest() {
+    @objc func stopRequest() {
         session.stopRequest()
     }
     
-    func disconnect() {
+    @objc func disconnect() {
         session.disconnect()
     }
 }
