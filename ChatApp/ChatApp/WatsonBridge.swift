@@ -51,7 +51,7 @@ import SpeechToTextV1
     @objc func startConversation(success: @escaping ((String) -> Void)) {
         context = nil // clear context to start a new conversation
         let failure = { (error: Error) in print(error) }
-        conversation.message(withWorkspace: workspaceID, failure: failure) { response in
+        conversation.message(workspaceID: workspaceID, failure: failure) { response in
             self.context = response.context // save context to continue conversation
             let text = response.output.text.joined(separator: "")
             success(text)
@@ -60,8 +60,9 @@ import SpeechToTextV1
     
     @objc func continueConversation(text: String, success: @escaping ((String) -> Void)) {
         let failure = { (error: Error) in print(error) }
-        let request = MessageRequest(text: text, context: context)
-        conversation.message(withWorkspace: workspaceID, request: request, failure: failure) { response in
+        let input = InputData(text: text)
+        let request = MessageRequest(input: input, context: context)
+        conversation.message(workspaceID: workspaceID, request: request, failure: failure) { response in
             self.context = response.context // save context to continue conversation
             let text = response.output.text.joined(separator: "")
             success(text)
