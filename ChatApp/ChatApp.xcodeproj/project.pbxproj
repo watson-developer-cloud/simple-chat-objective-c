@@ -11,7 +11,6 @@
 		5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */; };
 		7A14ACC31DD3B380004FB9F6 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */; };
 		7A6C51461DD3BDED002D34D7 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
-		7A6C51471DD3BDED002D34D7 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE251D3D53B3001D77E9 /* RestKit.framework */; };
 		7A6C51481DD3BDED002D34D7 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; };
 		7A6C51491DD3BDED002D34D7 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */; };
 		7AD3EDEA1D3D51FA001D77E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3EDE91D3D51FA001D77E9 /* main.m */; };
@@ -70,7 +69,6 @@
 		7AD3EE0F1D3D51FA001D77E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD3EE1B1D3D5318001D77E9 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
 		7AD3EE1C1D3D5318001D77E9 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
-		7AD3EE251D3D53B3001D77E9 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
 		7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		7AD3EE371D3D5400001D77E9 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6C51461DD3BDED002D34D7 /* ConversationV1.framework in Frameworks */,
-				7A6C51471DD3BDED002D34D7 /* RestKit.framework in Frameworks */,
 				7A6C51481DD3BDED002D34D7 /* SpeechToTextV1.framework in Frameworks */,
 				7A6C51491DD3BDED002D34D7 /* TextToSpeechV1.framework in Frameworks */,
 				5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */,
@@ -117,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				7AB445521D3ECF4100E8748A /* ConversationV1.framework */,
-				7AD3EE251D3D53B3001D77E9 /* RestKit.framework */,
 				7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */,
 				7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */,
 				D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */,
@@ -453,7 +449,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
 			);
 			outputPaths = (
 			);
