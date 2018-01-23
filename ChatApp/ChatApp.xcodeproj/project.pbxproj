@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		399CEE66AB6AF585D148CC3E /* Pods_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE02EE55FE4843DC9238B33 /* Pods_ChatAppUITests.framework */; };
 		5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D216501AE0DE2A397B22E0D8 /* Pods_ChatApp.framework */; };
+		68A4C5192016B5CC00835EE4 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A4C5182016B5CC00835EE4 /* Starscream.framework */; };
 		7A14ACC31DD3B380004FB9F6 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */; };
 		7A6C51461DD3BDED002D34D7 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB445521D3ECF4100E8748A /* ConversationV1.framework */; };
 		7A6C51481DD3BDED002D34D7 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */; };
@@ -48,6 +49,7 @@
 		0ABE883E708313C01D56C9A5 /* Pods-ChatAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppUITests/Pods-ChatAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		33E5A72F799B1045339B2114 /* Pods-ChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C891A35ED0BC28998D9703F /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
+		68A4C5182016B5CC00835EE4 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		6ADD5A95A47F60B45C0CC379 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A14ACC21DD3B37F004FB9F6 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		7AB445521D3ECF4100E8748A /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				7A6C51461DD3BDED002D34D7 /* ConversationV1.framework in Frameworks */,
 				7A6C51481DD3BDED002D34D7 /* SpeechToTextV1.framework in Frameworks */,
 				7A6C51491DD3BDED002D34D7 /* TextToSpeechV1.framework in Frameworks */,
+				68A4C5192016B5CC00835EE4 /* Starscream.framework in Frameworks */,
 				5E96E8E3B2E0D37C179309AA /* Pods_ChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +116,7 @@
 		0FE0208FDA91A1BCC1917A88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68A4C5182016B5CC00835EE4 /* Starscream.framework */,
 				7AB445521D3ECF4100E8748A /* ConversationV1.framework */,
 				7AD3EE261D3D53B3001D77E9 /* SpeechToTextV1.framework */,
 				7AD3EE281D3D53B3001D77E9 /* TextToSpeechV1.framework */,
@@ -449,6 +453,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
 			);
 			outputPaths = (
 			);
