@@ -1,5 +1,7 @@
 # Watson Developer Cloud Swift SDK: Chat App Example
 
+## DEPRECATED: this repo is no longer actively maintained. It can still be used as reference, but may contain outdated or unpatched code.
+
 This repository contains an example application to demonstrate how the Swift-based [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) can be consumed from an Objective-C application.
 
 This example modifies the [JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController) demo application to add Watson services, including Speech to Text, Conversation, and Text to Speech.
